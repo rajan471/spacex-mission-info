@@ -1,0 +1,28 @@
+<div class="mission-container" *ngIf="mission">
+  <div class="mission">
+    <div class="mission-img">
+      <img [src]="mission.missionImage" alt="mission-image">
+    </div>
+    <div class="mission-title">{{mission.missionName}} #{{mission.flightNumber}}</div>
+    <div class="mission-ids">
+      <b>Mission Ids:</b>
+      <ul>
+        <li *ngFor="let id of mission.missionIds">{{id}}</li>
+      </ul>
+    </div>
+    <div class="other-info">
+      <div class="data">
+        <span class="key">Launch Year:</span>
+        <span class="value">{{mission.launchYear}}</span>
+      </div>
+      <div class="data">
+        <span class="key">Successful Launch:</span>
+        <span class="value">{{mission.launchSuccess ? 'Yes': 'No'}}</span>
+      </div>
+      <div class="data">
+        <span class="key">Successful Landing:</span>
+        <span class="value">{{mission.landingSuccess ? 'Yes': 'No'}}</span>
+      </div>
+    </div>
+  </div>
+</div>

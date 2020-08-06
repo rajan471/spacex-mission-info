@@ -1,0 +1,44 @@
+<header>
+  <h1>SpaceX Launch Programs</h1>
+</header>
+<div class="flex-container">
+  <div class="filters-wrapper">
+    <div class="filters">
+      <p class="h3">Filters</p>
+      <div class="year-filters filters-group">
+        <p>Launch Year</p>
+        <button *ngFor="let year of filterYears; let i = index" [ngClass]="{'selected': year === selectedYear}"
+          (click)="filterYear(year)" tabindex="{{i + 1}}">{{year}}</button>
+      </div>
+      <div class="launch-filters filters-group">
+        <p>Successful Lanch</p>
+        <button (click)="launchSuccess('true')" [ngClass]="{'selected': successfulLaunch === 'true'}"
+          tabindex="{{filterYears.length + 1}}">True</button>
+        <button (click)="launchSuccess('false')" [ngClass]="{'selected': successfulLaunch === 'false'}"
+          tabindex="{{filterYears.length + 2}}">False</button>
+      </div>
+      <div class="landing-filters filters-group">
+        <p>Successful Landing</p>
+        <button (click)="landingSuccess('true')" [ngClass]="{'selected': successfulLanding === 'true'}"
+          tabindex="{{filterYears.length + 3}}">True</button>
+        <button (click)="landingSuccess('false')" [ngClass]="{'selected': successfulLanding === 'false'}"
+          tabindex="{{filterYears.length + 4}}">False</button>
+      </div>
+    </div>
+  </div>
+
+  <div [ngClass]="{ 'flex-container missions-list': true, 'loading': loading }">
+    <div class="list-wrapper">
+      <div *ngIf="apiMessage.length > 0; else missionsList" class="error-message">
+        {{apiMessage}}
+      </div>
+      <ng-template #missionsList>
+        <div class="mission-wrapper" *ngFor="let mission of missions; let i = index; trackBy: trackByMissionName">
+          <div class="content" tabindex="{{filterYears.length + 4 + i}}">
+            <app-mission-card [mission]="mission"></app-mission-card>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
