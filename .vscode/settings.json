@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/40c5573b-6529-4320-815b-79bfde2bad52/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/spacex-mission",
+    "appService.deploySubpath": "."
+}
