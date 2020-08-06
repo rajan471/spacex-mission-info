@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "prestart": "ng test && ng build --prod && ng run spacex:server:production",
     "start": "node dist/spacex/server/main.js",
     "build": "ng build",
     "test": "ng test",
@@ -11,8 +12,7 @@
     "dev:ssr": "ng run spacex:serve-ssr",
     "serve:ssr": "node dist/spacex/server/main.js",
     "build:ssr": "ng build --prod && ng run spacex:server:production",
-    "prerender": "ng run spacex:prerender",
-    "heroku-postbuild": "ng run spacex:server:production"
+    "prerender": "ng run spacex:prerender"
   },
   "private": true,
   "dependencies": {
