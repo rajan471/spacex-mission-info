@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prestart": "ng test && ng build --prod && ng run spacex:server:production",
+    "prestart": "ng build --prod && ng run spacex:server:production",
     "start": "node dist/spacex/server/main.js",
     "build": "ng build",
     "test": "ng test",

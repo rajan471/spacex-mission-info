@@ -41,8 +41,9 @@ describe('DashboardComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     const compiled: HTMLElement = fixture.debugElement.nativeElement;
-    const filterButton = compiled.querySelector('.filters .year-filters span') as HTMLElement;
+    const filterButton = compiled.querySelector('.filters .year-filters button') as HTMLElement;
     filterButton.click();
+    fixture.detectChanges();
     fixture.whenStable().then(() => {
       expect(component.filterYear).toHaveBeenCalled();
       done();
@@ -53,7 +54,7 @@ describe('DashboardComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     const compiled: HTMLElement = fixture.debugElement.nativeElement;
-    const filterButton = compiled.querySelector('.filters .launch-filters span') as HTMLElement;
+    const filterButton = compiled.querySelector('.filters .launch-filters button') as HTMLElement;
     filterButton.click();
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -66,7 +67,7 @@ describe('DashboardComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     const compiled: HTMLElement = fixture.debugElement.nativeElement;
-    const filterButton = compiled.querySelector('.filters .landing-filters span') as HTMLElement;
+    const filterButton = compiled.querySelector('.filters .landing-filters button') as HTMLElement;
     filterButton.click();
     fixture.detectChanges();
     fixture.whenStable().then(() => {

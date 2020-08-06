@@ -27,7 +27,6 @@ describe('MissionCardComponent', () => {
     testHostComponent = testHostFixture.componentInstance;
     testHostComponent.updateMission();
     testHostFixture.detectChanges();
-    console.log(testHostFixture.nativeElement);
     const title = testHostFixture.nativeElement.querySelector('.mission .mission-title');
     expect(title).toBeTruthy();
     done();
