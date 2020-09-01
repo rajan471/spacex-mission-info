@@ -18,5 +18,5 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    ng build:ssr
+    ng build --prod && ng run spacex:server:production
   displayName: 'npm install and build'
